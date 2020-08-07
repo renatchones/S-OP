@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head><meta charset="UTF-8"/></head>
+<body>
+	
+	    <section class="layout-content" layout:fragment="corpo">
+	
+	        <nav class="navbar navbar-expand-md bg-light">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                        <i class="oi oi-caret-right"></i>
+	                        <span>Cadastrar Currículo</span>
+	                    </li>
+	                </ul>
+	                <a class="btn btn-primary btn-md" th:href="@{/pythons/listar}" role="button">
+	                    <span class="oi oi-spreadsheet" title="Listar" aria-hidden="true"></span>
+	                    <span>Listar Funcionários</span>
+	                </a>
+	            </div>
+	        </nav>
+	
+	        <div class="container" id="cadastro">
+	        
+	        	<div th:replace="fragments/alert"></div>
+	        	
+				<form th:action="${python.id == null} ? @{/pythons/salvar} : @{/pythons/editar}" 
+				      th:object="${python}" method="POST">
+	        		
+	        		<div th:replace="fragments/validacao :: validacao"></div>
+				    
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="nome">Nome Completo</label>
+				            <input type="text" class="form-control" id="nome"
+				                   placeholder="Nome Completo" autofocus="autofocus" th:field="*{nome}"/>
+				        </div>
+				    </div>
+				    
+				     <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="endereco">Endereço</label>
+				            <input type="Endereco" class="form-control" id="endereco"
+				                   placeholder="Endereço" autofocus="autofocus" th:field="*{endereco}"/>
+				        </div>
+				    </div>
+				    
+				     <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="salario">Custo</label>
+				            <input type="number" class="form-control" id="salario"
+				                   placeholder="Custo" autofocus="autofocus" th:field="*{salario}"/>
+				        </div>
+				    </div>
+				    
+				       <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="idade">Idade</label>
+				            <input type="number" class="form-control" id="idade"
+				                   placeholder="Idade" autofocus="autofocus" th:field="*{idade}"/>
+				        </div>
+				    </div>
+				    
+				       <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="objetivo">Objetivo</label>
+				            <input type="text" class="form-control" id="objetivo"
+				                   placeholder="Objetivo" autofocus="autofocus" th:field="*{objetivo}"/>
+				        </div>
+				    </div>
+				    
+				       <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="cursos">Cursos</label>
+				            <input type="text" class="form-control" id="cursos"
+				                   placeholder="Cursos" autofocus="autofocus" th:field="*{cursos}"/>
+				        </div>
+				    </div>
+				    
+				       <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="experiencia">Experiências</label>
+				            <input type="text" class="form-control" id="experiencia"
+				                   placeholder="Experiências" autofocus="autofocus" th:field="*{experiencia}"/>
+				        </div>
+				    </div>
+				    
+				    <input type="hidden" id="id" th:field="*{id}"/>
+				    <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+				</form>
+	        </div>
+	    </section>
+</body>
+</html>

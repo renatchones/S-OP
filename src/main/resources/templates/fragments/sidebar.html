@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+			<nav class="sidebar sidebar-open" th:fragment="nav-sidebar">
+				<ul class="nav nav-pills">
+					<li class="nav-item"><a class="nav-link " th:href="@{/}"> <i
+							class=""></i> <img th:src="@{/image/Qintess-logo.jpg}" width="300" height="130" class="card-img-top" alt="...">
+					</a></li>
+				</ul>
+
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link btn-dark" >Java</span></li>
+					<li class="nav-item"><a class="nav-link" 
+						th:href="@{/javas/cadastrar}"> <i class="oi oi-plus"></i> 
+						<span th:text="#{sidebar.link.cadastrar}">Cadastrar </span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/javas/listar}"> <i class="oi oi-spreadsheet"></i>
+							<span th:text="#{sidebar.link.listar}">Listar </span>
+					</a></li>
+				</ul>
+
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link btn-dark" >Python</span></li>
+					<li class="nav-item"><a class="nav-link" 
+						th:href="@{/pythons/cadastrar}"> <i class="oi oi-plus"></i> 
+						<span th:text="#{sidebar.link.cadastrar}">Cadastrar </span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" 
+						th:href="@{/pythons/listar}"> <i class="oi oi-spreadsheet"></i>
+							<span th:text="#{sidebar.link.listar}">Listar </span>
+					</a></li>
+				
+				</ul>
+			</nav>
+</body>
+</html>

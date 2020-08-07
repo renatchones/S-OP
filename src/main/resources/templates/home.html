@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head><meta charset="UTF-8" /></head>
+<body>
+		
+	<section class="layout-content" layout:fragment="corpo">	
+		<nav class="navbar navbar-expand-md bg-light">
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault" >
+				<ul class="navbar-nav mr-auto" >
+					<li class="nav-item active">
+						<i class=""></i>
+						<h3>Home</h3>
+						
+							<div class="card bg-dark text-white">
+  							<img th:src="@{image/curriculo.jpg}" class="card-img" alt="...">
+  						
+							</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div id="list-home" class="row">
+				<div class="col-4">
+					<div class="list-group" id="list-tab" role="tablist">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>		
+</body>
+</html>
