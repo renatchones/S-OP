@@ -32,10 +32,10 @@ public class Python extends AbstractEntity<Long> {
 	@Column(nullable = false, columnDefinition = "DECIMAL(7,2) DEFAULT 0.00")
 	private BigDecimal salario;
 	
-	@Valid
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "endereco_id_fk")
-	private Endereco endereco;
+	//@Valid
+	//@OneToOne(cascade = CascadeType.ALL)
+	//@JoinColumn(name = "endereco_id_fk")
+	//private Endereco endereco;
 	
 	@JoinColumn
 	private String objetivo;
@@ -52,19 +52,7 @@ public class Python extends AbstractEntity<Long> {
 
 	}
 
-	public Python(
-			@NotBlank(message = "Informe um nome.") @Size(min = 3, max = 60, message = "O nome do departamento deve ter entre {min} e {max} caracteres.") String nome,
-			@NotNull BigDecimal salario, @Valid Endereco endereco, String objetivo, Integer idade, String experiencia,
-			String cursos) {
-		super();
-		this.nome = nome;
-		this.salario = salario;
-		this.endereco = endereco;
-		this.objetivo = objetivo;
-		this.idade = idade;
-		this.experiencia = experiencia;
-		this.cursos = cursos;
-	}
+	
 
 	public String getNome() {
 		return nome;
@@ -82,13 +70,13 @@ public class Python extends AbstractEntity<Long> {
 		this.salario = salario;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
+//	public Endereco getEndereco() {
+//		return endereco;
+//	}
+//
+//	public void setEndereco(Endereco endereco) {
+//		this.endereco = endereco;
+//	}
 
 	public String getObjetivo() {
 		return objetivo;

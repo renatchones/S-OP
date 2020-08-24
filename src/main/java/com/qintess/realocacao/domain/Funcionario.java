@@ -1,25 +1,29 @@
 package com.qintess.realocacao.domain;
 
+
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.format.annotation.NumberFormat.Style;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "JAVA")
-public class Java extends AbstractEntity<Long> {
+@Table(name = "FUNCIONARIOS")
+public class Funcionario extends AbstractEntity<Long> {
 
 	@NotBlank(message = "Informe um nome.")
 	@Size(min = 3, max = 60, message = "O nome do funcionário deve ter entre {1} e {100} caracteres.")
@@ -32,13 +36,13 @@ public class Java extends AbstractEntity<Long> {
 	@Column(nullable = false, columnDefinition = "DECIMAL(7,2) DEFAULT 0.00")
 	private BigDecimal salario;
 	
-//	@Valid
-//	@OneToOne(cascade = CascadeType.ALL)
-//	@JoinColumn(name = "endereco_id_fk")
-//	private Endereco endereco;
 	
-	@JoinColumn
-	private String objetivo;
+	private String estado;
+	
+	@NotNull(message = "Selecione o objetivo relativo ao funcionario.")
+	@ManyToOne
+	@JoinColumn(name = "id_objetivo_fk")
+	private Objetivo objetivo;
 	
 	@JoinColumn
 	private Integer idade;
@@ -47,12 +51,6 @@ public class Java extends AbstractEntity<Long> {
 	private String experiencia;
 	
 	private String cursos;
-
-	public Java() {
-
-	}
-
-	
 
 	public String getNome() {
 		return nome;
@@ -70,20 +68,14 @@ public class Java extends AbstractEntity<Long> {
 		this.salario = salario;
 	}
 
-//	public Endereco getEndereco() {
-//		return endereco;
-//	}
-//
-//	public void setEndereco(Endereco endereco) {
-//		this.endereco = endereco;
-//	}
 
-	public String getObjetivo() {
-		return objetivo;
+	
+	public String getEstado() {
+		return estado;
 	}
 
-	public void setObjetivo(String objetivo) {
-		this.objetivo = objetivo;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	public Integer getIdade() {
@@ -110,15 +102,13 @@ public class Java extends AbstractEntity<Long> {
 		this.cursos = cursos;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + ((objetivo == null) ? 0 : objetivo.hashCode());
-		return result;
+	public Objetivo getObjetivo() {
+		return objetivo;
+	}
+
+	public void setObjetivo(Objetivo objetivo) {
+		this.objetivo = objetivo;
 	}
 
 
-	
-	
 }

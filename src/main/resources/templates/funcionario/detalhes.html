@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+
+	<section class="layout-content" layout:fragment="corpo">
+		<p></p>
+		<nav class="navbar navbar-expand-md bg-light">
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><i class="oi oi-caret-right"></i>
+						<span>Currículos</span></li>
+				</ul>
+				<p></p>
+
+
+			</div>
+		</nav>
+	<table>
+	
+	 <div class="container" id="listagem">
+		<div th:replace="fragments/alert"></div>
+
+
+		<div class="table-responsive">
+			<form th:action="@{detalhes/{id}} ">
+								
+		
+						 <div class="text-white bg-dark">
+				        <div class="form-group col-md-6">
+				            <label for="nome">Nome: </label>
+				           	<a th:text="${funcionario.nome}"></a>
+				        </div>
+				    </div>
+				    
+				     <div >
+				        <div class="form-group col-md-6">
+				            <label for="estado">Estado: </label>
+				            <a th:text="${funcionario.estado}"></a>
+				        </div>
+				    </div>
+				    
+				     <div class="text-white bg-dark">
+				        <div class="form-group col-md-6">
+				            <label for="salario">Custo: </label>
+				            <a th:text="${funcionario.salario}"></a>
+				        </div>
+				    </div>
+				    
+				      
+				    
+				       <div class="text-white bg-dark">
+				        <div class="form-group col-md-6">
+				            <label for="objetivo">Objetivo(s): </label>
+				           <a th:text="${funcionario.objetivo.nome}"></a>
+				        </div>
+				    </div>
+				    
+				       <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="cursos">Curso(s): </label>
+				            <a th:text="${funcionario.cursos}"></a>
+				        </div>
+				    </div>
+				    
+				       <div class="text-white bg-dark">
+				        <div class="form-group col-md-6">
+				            <label for="experiencia">Experiências: </label>
+				            <a th:text="${funcionario.experiencia}"></a>
+				        </div>
+				    </div>
+
+				
+					</div>
+				</div>
+
+	
+
+
+				<td colspan="2"></td>
+
+
+				</table>
+						<a class="btn btn-primary btn-danger" href="/funcionarios/listar"
+						role="button"> <span title="Listar" aria-hidden="true"></span>
+								<span>Voltar</span>
+							</a>
+
+
+			</form>
+		</div>
+
+
+		<div th:replace="fragments/modal :: modal"></div>
+	</section>
+
+
+</body>
+</html>
+
+

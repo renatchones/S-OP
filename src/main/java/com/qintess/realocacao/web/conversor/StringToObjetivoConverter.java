@@ -4,17 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import com.qintess.realocacao.domain.Java;
-import com.qintess.realocacao.service.JavaService;
+import com.qintess.realocacao.domain.Objetivo;
+import com.qintess.realocacao.service.ObjetivoService;
 
 @Component
-public class StringToJavaConverter implements Converter<String, Java> {
+public class StringToObjetivoConverter implements Converter<String, Objetivo> {
 	
 	@Autowired
-	private JavaService service;
+	private ObjetivoService service;
 
 	@Override
-	public Java convert(String text) {
+	public Objetivo convert(String text) {
 		if (text.isEmpty()) {
 			return null;
 		}
