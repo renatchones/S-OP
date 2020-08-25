@@ -35,13 +35,29 @@
 				        </div>
 				    </div>
 				    
-				     <div class="form-row">
-				        <div class="form-group col-md-6">
-				            <label for="estado">Estado</label>
-				            <input type="Estado" class="form-control" id="estado"
-				                   placeholder="Estado" autofocus="autofocus" th:field="*{estado}"/>
-				        </div>
-				    </div>
+				    <div>
+				    <h7>Objetivo(s)</h7>
+						</div>						
+					<div class="form-check form-check-inline">
+					  <input type="checkbox" class="form-check-input" id="objetivo" th:field="*{objetivo}" th:value="${objetivo}">
+					  <label class="form-check-label" for="objetivo" >Java</label>
+					</div>
+					
+					<!-- Material inline 2 -->
+					<div class="form-check form-check-inline">
+					    <input type="checkbox" class="form-check-input" id="objetivo" th:field="*{objetivo}" th:value="${objetivo}">
+					    <label class="form-check-label" for="objetivo">Angular</label>
+					</div>
+					
+					<!-- Material inline 3 -->
+					<div class="form-check form-check-inline">
+					    <input type="checkbox" class="form-check-input" id="objetivo" th:field="*{objetivo}" th:value="${objetivo}">
+					    <label class="form-check-label" for="objetivo">.Net</label>
+					</div>
+				    
+				    
+				    
+				    
 				    
 				     <div class="form-row">
 				        <div class="form-group col-md-6">
@@ -51,14 +67,7 @@
 				        </div>
 				    </div>
 				    
-				       <div class="form-row">
-				        <div class="form-group col-md-6">
-				            <label for="idade">Idade</label>
-				            <input type="number" class="form-control" id="idade"
-				                   placeholder="Idade" autofocus="autofocus" th:field="*{idade}"/>
-				        </div>
-				    </div>
-				    
+				     
 				   
 				    
 				       <div class="form-row">
@@ -69,35 +78,191 @@
 				        </div>
 				    </div>
 				    
+				  <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="colaboradorCiente">Colaborador Ciente</label>
+				            <input type="text" class="form-control" id="colaboradorCiente"
+				                   placeholder="Sim ou Não" autofocus="autofocus" th:field="*{colaboradorCiente}"/>
+				        </div>
+				    </div>
+				    
+				    
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="resource">Resource</label>
+				            <input type="text" class="form-control" id="resource"
+				                   placeholder="Exemplo: resource - Sp" autofocus="autofocus" th:field="*{resource}"/>
+				        </div>
+				    </div>
+				    
+				   
+				    
+				     <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="re">RE</label>
+				            <input type="number" class="form-control" id="re"
+				                   placeholder="somente números" autofocus="autofocus" th:field="*{re}"/>
+				        </div>
+				    </div>
+				    
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="codigo">Codigo</label>
+				            <input type="text" class="form-control" id="codigo"
+				                   placeholder="Codigo" autofocus="autofocus" th:field="*{codigo}"/>
+				        </div>
+				    </div>
+				    
+				    
 				       <div class="form-row">
 				        <div class="form-group col-md-6">
-				            <label for="experiencia">Experiências</label>
-				            <input type="text" class="form-control" id="experiencia"
-				                   placeholder="Experiências" autofocus="autofocus" th:field="*{experiencia}"/>
+				            <label for="perfil">Perfil</label>
+				            <input type="text" class="form-control" id="perfil"
+				                   placeholder="Perfil" autofocus="autofocus" th:field="*{perfil}"/>
+				        </div>
+				    </div>
+				    
+				    
+				   
+				    
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="baseDeHoras">Base De Horas</label>
+				            <input type="number" class="form-control" id="baseDeHoras"
+				                   placeholder="Exemplo: 200" autofocus="autofocus" th:field="*{baseDeHoras}"/>
+				        </div>
+				    </div>
+				    
+				    
+				     <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="custoHora">Custo Hora</label>
+				            <input type="number" class="form-control" id="custoHora"
+				                   placeholder="Exemplo: 30" autofocus="autofocus" th:field="*{custoHora}"/>
+				        </div>
+				    </div>
+					
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="custoMes">Custo Mes</label>
+				            <input type="number" class="form-control" id="custoMes"
+				                   placeholder="Exemplo: 30" autofocus="autofocus" th:field="*{custoMes}"/>
+				        </div>
+				    </div>
+					
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="observacao">Observacao</label>
+				            <input type="text" class="form-control" id="observacao"
+				                   placeholder="observacao" autofocus="autofocus" th:field="*{observacao}"/>
+				        </div>
+				    </div>
+				    
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="cliente">Cliente</label>
+				            <input type="text" class="form-control" id="cliente"
+				                   placeholder="cliente" autofocus="autofocus" th:field="*{cliente}"/>
 				        </div>
 				    </div>
 				    
 				     <div class="form-row">
-	                    <div class="form-group col-md-6">
-	                        <label for="objetivo">Objetivo</label>
-	                        <select id="objetivo" class="form-control" th:field="*{objetivo}">
-	                            <option value="">Selecione...</option>
-	                             <option th:each="d : ${objetivos}" 
-	                                    th:value="${d.id}" th:text="${d.nome}">Java</option>
-	                       
-	                        </select>
-	                        
-	                        <div class="invalid-feedback">
-								<span th:errors="*{objetivo}"></span>
-	                        </div>
-	                     
-	                    </div>
-	                </div>
-	             
-			
-			
-		
-	 
+				        <div class="form-group col-md-6">
+				            <label for="gestor">Gestor</label>
+				            <input type="text" class="form-control" id="gestor"
+				                   placeholder="gestor" autofocus="autofocus" th:field="*{gestor}"/>
+				        </div>
+				    </div>
+				    
+				     <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="disponibilidade">Disponibilidade</label>
+				            <input type="text" class="form-control" id="disponibilidade"
+				                   placeholder="disponibilidade" autofocus="autofocus" th:field="*{disponibilidade}"/>
+				        </div>
+				    </div>
+				    
+				    
+				     <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="parecerTecnico">Parecer Tecnico</label>
+				            <input type="text" class="form-control" id="parecerTecnico"
+				                   placeholder="Parecer Tecnico" autofocus="autofocus" th:field="*{parecerTecnico}"/>
+				        </div>
+				    </div>
+				    
+				      <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="parecerComportamental">Parecer Comportamental</label>
+				            <input type="text" class="form-control" id="parecerComportamental"
+				                   placeholder="Parecer Comportamental" autofocus="autofocus" th:field="*{parecerComportamental}"/>
+				        </div>
+				    </div>
+				    
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="voluntario">Voluntario</label>
+				            <input type="text" class="form-control" id="voluntario"
+				                   placeholder="Exemplo: Sim ou Não" autofocus="autofocus" th:field="*{voluntario}"/>
+				        </div>
+				    </div>
+				     
+				      <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="motivo">Motivo</label>
+				            <input type="text" class="form-control" id="motivo"
+				                   placeholder="Motivo" autofocus="autofocus" th:field="*{motivo}"/>
+				        </div>
+				    </div>
+				    
+				     <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="status">Status</label>
+				            <input type="text" class="form-control" id="status"
+				                   placeholder="status" autofocus="autofocus" th:field="*{status}"/>
+				        </div>
+				    </div>
+				    
+				     <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="assistendeDeRealocacao">Assistente De Realocacao</label>
+				            <input type="text" class="form-control" id="assistendeDeRealocacao"
+				                   placeholder="assistendeDeRealocacao" autofocus="autofocus" th:field="*{assistendeDeRealocacao}"/>
+				        </div>
+				    </div>
+				    
+				     <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="contato">Contato</label>
+				            <input type="text" class="form-control" id="contato"
+				                   placeholder="contato" autofocus="autofocus" th:field="*{contato}"/>
+				        </div>
+				    </div>
+				    
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="cv">Cv</label>
+				            <input type="text" class="form-control" id="cv"
+				                   placeholder="cv" autofocus="autofocus" th:field="*{cv}"/>
+				        </div>
+				    </div>
+				    
+				     <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="bh">Banco de horas</label>
+				            <input type="number" class="form-control" id="bh"
+				                   placeholder="Exemplo: 40" autofocus="autofocus" th:field="*{bh}"/>
+				        </div>
+				    </div>
+				    
+				     <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="feriasProgramadas">Férias Programadas</label>
+				            <input type="text" class="form-control" id="feriasProgramadas"
+				                   placeholder="Sim ou Não" autofocus="autofocus" th:field="*{feriasProgramadas}"/>
+				        </div>
+				    </div>
+				     
 	                <input type="hidden" id="id" th:field="*{id}"/>
 	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
 	            </form>

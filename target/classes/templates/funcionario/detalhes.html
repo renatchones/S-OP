@@ -35,12 +35,7 @@
 				        </div>
 				    </div>
 				    
-				     <div >
-				        <div class="form-group col-md-6">
-				            <label for="estado">Estado: </label>
-				            <a th:text="${funcionario.estado}"></a>
-				        </div>
-				    </div>
+				     
 				    
 				     <div class="text-white bg-dark">
 				        <div class="form-group col-md-6">
@@ -54,7 +49,7 @@
 				       <div class="text-white bg-dark">
 				        <div class="form-group col-md-6">
 				            <label for="objetivo">Objetivo(s): </label>
-				           <a th:text="${funcionario.objetivo.nome}"></a>
+				           <a th:text="${funcionario.objetivo}"></a>
 				        </div>
 				    </div>
 				    
@@ -65,14 +60,163 @@
 				        </div>
 				    </div>
 				    
-				       <div class="text-white bg-dark">
+				    <div class="text-white bg-dark">
 				        <div class="form-group col-md-6">
-				            <label for="experiencia">Experiências: </label>
-				            <a th:text="${funcionario.experiencia}"></a>
+				            <label for="colaboradorCiente">Colaborador Ciente: </label>
+				           	<a th:text="${funcionario.colaboradorCiente}"></a>
+				        </div>
+				    </div>
+				    
+				      <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="resource">resource: </label>
+				            <a th:text="${funcionario.resource}"></a>
+				        </div>
+				    </div>
+					
+					
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="re">re: </label>
+				            <a th:text="${funcionario.re}"></a>
+				        </div>
+				    </div>
+					
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="codigo">codigo: </label>
+				            <a th:text="${funcionario.codigo}"></a>
+				        </div>
+				    </div>
+				    
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="perfil">perfil: </label>
+				            <a th:text="${funcionario.perfil}"></a>
+				        </div>
+				    </div>
+					
+
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="baseDeHoras">Base De Horas: </label>
+				            <a th:text="${funcionario.baseDeHoras}"></a>
+				        </div>
+				    </div>
+					
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="custoHora">Custo Hora: </label>
+				            <a th:text="${funcionario.custoHora}"></a>
+				        </div>
+				    </div>
+				    
+				    	<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="custoMes">Custo Mes: </label>
+				            <a th:text="${funcionario.custoMes}"></a>
+				        </div>
+				    </div>
+					
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="observacao">Observação: </label>
+				            <a th:text="${funcionario.observacao}"></a>
+				        </div>
+				    </div>
+				    
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="cliente">Cliente: </label>
+				            <a th:text="${funcionario.cliente}"></a>
+				        </div>
+				    </div>
+					
+					  <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="gestor">Gestor: </label>
+				            <a th:text="${funcionario.gestor}"></a>
+				        </div>
+				    </div>
+				    
+				      <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="disponibilidade">Disponibilidade: </label>
+				            <a th:text="${funcionario.disponibilidade}"></a>
+				        </div>
+				    </div>
+					
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="parecerTecnico">Parecer Tecnico: </label>
+				            <a th:text="${funcionario.parecerTecnico}"></a>
+				        </div>
+				    </div>
+				    
+				    	<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="parecerComportamental">Parecer Comportamental: </label>
+				            <a th:text="${funcionario.parecerComportamental}"></a>
+				        </div>
+				    </div>
+					
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="voluntario">voluntario: </label>
+				            <a th:text="${funcionario.voluntario}"></a>
+				        </div>
+				    </div>
+					
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="motivo">motivo: </label>
+				            <a th:text="${funcionario.motivo}"></a>
 				        </div>
 				    </div>
 
-				
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="status">status: </label>
+				            <a th:text="${funcionario.status}"></a>
+				        </div>
+				    </div>
+					
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="assistendeDeRealocacao">assistente De Realocacao: </label>
+				            <a th:text="${funcionario.assistendeDeRealocacao}"></a>
+				        </div>
+				    </div>
+					
+					<div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="contato">contato: </label>
+				            <a th:text="${funcionario.contato}"></a>
+				        </div>
+				    </div>
+				    
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="cv">cv: </label>
+				            <a th:text="${funcionario.cv}"></a>
+				        </div>
+				    </div>
+						
+						 <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="bh">Banco de Horas: </label>
+				            <a th:text="${funcionario.bh}"></a>
+				        </div>
+				    </div>
+						
+						 <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="feriasProgramadas">Férias Programadas: </label>
+				            <a th:text="${funcionario.feriasProgramadas}"></a>
+				        </div>
+				    </div>
+						
+						
 					</div>
 				</div>
 

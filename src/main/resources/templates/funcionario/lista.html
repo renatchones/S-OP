@@ -22,14 +22,27 @@
 	        <div class="container">
 	
 	             <nav class="navbar navbar-light bg-light">
-	                            <form class="form-inline" method="GET" th:action="@{/funcionarios/buscar/objetivo}">
-	                                <input class="form-control mr-sm-2" type="search" placeholder="Digite o objetivo" aria-label="Search"
-	                                       th:name="objetivo" />
-	                                <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
+	                            <form class="form-inline" method="GET" th:action="@{/funcionarios/listar}">
+	                            
+							<div class="form-check form-check-inline">
+					  <input type="checkbox" class="form-check-input" id="objetivo" >
+					  <label class="form-check-label" for="objetivo">Java</label>
+					</div>
+					
+					<!-- Material inline 2 -->
+					<div class="form-check form-check-inline">
+					    <input type="checkbox" class="form-check-input" id="objetivo">
+					    <label class="form-check-label" for="objetivo">Angular</label>
+					</div>
+					
+					<!-- Material inline 3 -->
+					<div class="form-check form-check-inline">
+					    <input type="checkbox" class="form-check-input" id="objetivo">
+					    <label class="form-check-label" for="objetivo">.Net</label>
+					</div>
+	           <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
 	                            </form>
 	                        </nav>
-	
-	           
 		
 	        
 	            <div class="table-responsive">
@@ -42,7 +55,7 @@
 					    <tr>
 					     
 					        <th>Nome</th>
-					        <th>Objetivo</th>
+					       	
 					        <th>Ação</th>
 					    </tr>
 					    </thead>
@@ -50,7 +63,7 @@
 					     <tr th:each="d : ${funcionarios}">
 					        <td>
 					          <a th:href="@{/funcionarios/detalhes/{id} (id=${d.id})}" th:text="${d.nome}">Pedro</a>
-					          <td th:text="${d.objetivo.nome}"></td>
+					       
 					         </td>
 					         <td colspan="2">
 					             <a class="btn btn-info btn-sm" th:href="@{/funcionarios/editar/{id} (id=${d.id}) }" role="button">
