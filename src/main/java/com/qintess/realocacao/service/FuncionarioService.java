@@ -16,5 +16,5 @@ public interface FuncionarioService {
 
     List<Funcionario> buscarTodos();
 
-
+    List<Funcionario> buscarPorObjetivo(String objetivo);
 }

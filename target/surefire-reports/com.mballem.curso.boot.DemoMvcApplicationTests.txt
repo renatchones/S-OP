@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.mballem.curso.boot.DemoMvcApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.128 s <<< FAILURE! - in com.mballem.curso.boot.DemoMvcApplicationTests
+initializationError(com.mballem.curso.boot.DemoMvcApplicationTests)  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+

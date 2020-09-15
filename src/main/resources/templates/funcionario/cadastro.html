@@ -36,28 +36,15 @@
 				    </div>
 				    
 				    <div>
-				    <h7>Objetivo(s)</h7>
-						</div>						
+				    	<h7>Objetivo(s)</h7>
+					</div>						
 					<div class="form-check form-check-inline">
-					  <input type="checkbox" class="form-check-input" id="objetivo" th:field="*{objetivo}" th:value="${objetivo}">
-					  <label class="form-check-label" for="objetivo" >Java</label>
+						<div class="pr-3" th:each="obj : ${objetivos}">
+							<input type="checkbox" class="form-check-input" id="objetivo" th:field="*{objetivo}" th:value="${obj.nome}">
+					 		<label class="form-check-label" for="objetivo" th:text="${obj.nome}"></label>
+						</div>
 					</div>
 					
-					<!-- Material inline 2 -->
-					<div class="form-check form-check-inline">
-					    <input type="checkbox" class="form-check-input" id="objetivo" th:field="*{objetivo}" th:value="${objetivo}">
-					    <label class="form-check-label" for="objetivo">Angular</label>
-					</div>
-					
-					<!-- Material inline 3 -->
-					<div class="form-check form-check-inline">
-					    <input type="checkbox" class="form-check-input" id="objetivo" th:field="*{objetivo}" th:value="${objetivo}">
-					    <label class="form-check-label" for="objetivo">.Net</label>
-					</div>
-				    
-				    
-				    
-				    
 				    
 				     <div class="form-row">
 				        <div class="form-group col-md-6">
@@ -66,9 +53,6 @@
 				                   placeholder="Custo" autofocus="autofocus" th:field="*{salario}"/>
 				        </div>
 				    </div>
-				    
-				     
-				   
 				    
 				       <div class="form-row">
 				        <div class="form-group col-md-6">

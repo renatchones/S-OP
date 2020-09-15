@@ -19,32 +19,24 @@
 	            </div>
 	        </nav>
 	
-	        <div class="container">
-	
-	             <nav class="navbar navbar-light bg-light">
-	                            <form class="form-inline" method="GET" th:action="@{/funcionarios/listar}">
-	                            
-							<div class="form-check form-check-inline">
-					  <input type="checkbox" class="form-check-input" id="objetivo" >
-					  <label class="form-check-label" for="objetivo">Java</label>
+			<form method="GET" modelAttribute="objetivoSeach" th:action="@{/funcionarios/filtrar}">
+				<legend class="form-label ml-1 mt-1">Filtrar</legend>
+				<div class="row">
+					<div class="col-auto ml-2">
+						<fieldset class="form-group">
+					        <div class="form-check-inline">
+					          	<div class="pr-3" th:each="obj : ${objetivos}">
+										<input class="form-check-input" type="radio" name="objetivoSearch" id="objetivoSearch" th:value="${obj.nome}">
+					          			<label class="form-check-label" for="objetivoSearch" th:text="${obj.nome}"></label>
+								</div>
+					        </div>
+						</fieldset>
 					</div>
-					
-					<!-- Material inline 2 -->
-					<div class="form-check form-check-inline">
-					    <input type="checkbox" class="form-check-input" id="objetivo">
-					    <label class="form-check-label" for="objetivo">Angular</label>
+					<div class="col">
+						<button class="btn btn-outline-success my-2 my-sm-0">Search</button>
 					</div>
-					
-					<!-- Material inline 3 -->
-					<div class="form-check form-check-inline">
-					    <input type="checkbox" class="form-check-input" id="objetivo">
-					    <label class="form-check-label" for="objetivo">.Net</label>
-					</div>
-	           <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
-	                            </form>
-	                        </nav>
-		
-	        
+				</div>
+	        </form>
 	            <div class="table-responsive">
 	            
 	            	<div th:replace="fragments/alert"></div>
@@ -62,7 +54,7 @@
 					    <tbody>
 					     <tr th:each="d : ${funcionarios}">
 					        <td>
-					          <a th:href="@{/funcionarios/detalhes/{id} (id=${d.id})}" th:text="${d.nome}">Pedro</a>
+					          <a th:href="@{/funcionarios/detalhes/{id} (id=${d.id})}" th:text="${d.nome}"></a>
 					       
 					         </td>
 					         <td colspan="2">

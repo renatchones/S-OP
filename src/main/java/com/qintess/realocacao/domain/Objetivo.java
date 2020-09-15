@@ -21,9 +21,6 @@ public class Objetivo extends AbstractEntity<Long> {
 	@OneToMany(mappedBy = "objetivo")
 	private List<Funcionario> funcionarios;
 
-	
-
-
 	public String getNome() {
 		return nome;
 	}

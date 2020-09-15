@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.qintess.realocacao.domain.Funcionario;
 
-public interface FuncionarioDao {
+public interface FuncionarioDao{
     
 	void save(Funcionario funcionario);
 
@@ -15,7 +15,5 @@ public interface FuncionarioDao {
     Funcionario findById(Long id);
 
     List<Funcionario> findAll();
-
-  
-
+    
 }

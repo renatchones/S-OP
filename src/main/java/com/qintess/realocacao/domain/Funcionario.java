@@ -86,7 +86,6 @@ public class Funcionario extends AbstractEntity<Long> {
 //	private Objetivo objetivo;
 //	
 //
-//	
 	
 	private String objetivo;
 

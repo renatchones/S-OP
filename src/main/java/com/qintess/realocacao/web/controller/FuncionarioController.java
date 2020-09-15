@@ -1,7 +1,5 @@
 package com.qintess.realocacao.web.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.qintess.realocacao.domain.Funcionario;
-import com.qintess.realocacao.domain.Objetivo;
 import com.qintess.realocacao.service.FuncionarioService;
 import com.qintess.realocacao.service.ObjetivoService;
 
@@ -32,13 +29,22 @@ public class FuncionarioController {
 
 
 	@GetMapping("/cadastrar")
-	public String cadastrar(Funcionario funcionario) {
+	public String cadastrar(Funcionario funcionario, ModelMap model) {
+		model.addAttribute("objetivos", objetivoService.buscarTodos());
 		return "funcionario/cadastro";
 	}
 	
 	@GetMapping("/listar")
 	public String listar(ModelMap model) {
 		model.addAttribute("funcionarios", funcionarioService.buscarTodos());
+		model.addAttribute("objetivos", objetivoService.buscarTodos());
+		return "funcionario/lista"; 
+	}
+	
+	@GetMapping("/filtrar")
+	public String filtra(ModelMap model,@ModelAttribute("objetivoSearch") String objetivoSearch) {
+		model.addAttribute("funcionarios", funcionarioService.buscarPorObjetivo(objetivoSearch));
+		model.addAttribute("objetivos", objetivoService.buscarTodos());
 		return "funcionario/lista"; 
 	}
 	
@@ -69,7 +75,7 @@ public class FuncionarioController {
 		return "redirect:/funcionarios/listar";
 	}	
 	
-//	@GetMapping("/buscar/objetivo")
+//	@GetMapping("/buscar/{objetivo}")
 //	public String getPorObjetivo(@RequestParam("objetivo") String nome, ModelMap model) {		
 //		model.addAttribute("funcionarios", funcionarioService.buscarPorObjetivo(nome));
 //		return "funcionario/lista";
